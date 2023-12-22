@@ -1,0 +1,16 @@
+---
+name: Build
+
+on:  # yamllint disable-line rule:truthy
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    yamlfix:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        #   - uses: lyz-code/yamlfix@v1
+        - uses: dsmello/yamlfix
